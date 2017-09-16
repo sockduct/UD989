@@ -22,6 +22,7 @@ var cat6 = new cat('Neptune', 'cat6.jpg', 0);
 
 var cats = [cat1, cat2, cat3, cat4, cat5, cat6];
 
+var currentCat = null;
 
 // Program
 for (var i = 0; i < cats.length; i++) {
@@ -35,10 +36,14 @@ for (var i = 0; i < cats.length; i++) {
       $('#catTitle').text(icatSaved.name);
       $('#catImage').attr('src', 'img/' + icatSaved.picture);
       $('#catClicks').text(icatSaved.clicks);
-      $('#catImage').on('click', function() {
-        icatSaved.clicks++;
-        $('#catClicks').text(icatSaved.clicks);
-      });
+      currentCat = icatSaved;
     };
   })(i, icat));
 };
+
+$('#catImage').on('click', function() {
+  if (currentCat) {
+    currentCat.clicks++;
+    $('#catClicks').text(currentCat.clicks);
+  }
+});
