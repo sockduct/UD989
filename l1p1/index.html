@@ -7,21 +7,23 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <script src='js/jquery-3.2.1.min.js'></script>
     <!-- Need to use defer option so this app script can parse the DOM! -->
-    <script src='js/catapp.js' defer></script>
+    <script src='js/catapp-mov.js'></script>
   </head>
   <body>
     <div class="grid">
-      <h1>Cat Clicker Project/App</h1>
+      <h1>The Cat Clicker</h1>
       <div class="row">
         <div class="col-4">
+          <h3>Cat Roundup</h3>
           <!-- Place holder for list element insertion -->
           <ul id="catList"></ul>
         </div>
         <div class="col-4">
           <figure>
-            <figcaption id="catTitle">Hello, I'm...</figcaption>
+            <figcaption id="catTitle">Please select a cat!</figcaption>
             <img src="img/qmark.jpg" alt="Selected Cat Picture" class="mainImage" id="catImage">
-            <figcaption>So far, you've clicked <span id="catClicks">0</span> times</figcaption>
+            <figcaption id="catClickCaption"></figcaption>
+            <div id="currentCat" hidden></div>
           </figure>
         </div>
       </div>
